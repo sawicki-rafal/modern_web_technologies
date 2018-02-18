@@ -3,10 +3,131 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
+	<title>Tytuł</title>
 	<style>
+	html, body, div, span, applet, object, iframe,
+	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+	a, abbr, acronym, address, big, cite, code,
+	del, dfn, em, img, ins, kbd, q, s, samp,
+	small, strike, strong, sub, sup, tt, var,
+	b, u, i, center,
+	fieldset, form, label, legend,
+	table, caption, tbody, tfoot, thead, tr, th, td,
+	article, aside, canvas, details, embed,
+	figure, figcaption, footer, header, hgroup,
+	menu, nav, output, ruby, section, summary,
+	time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+	/* HTML5 display-role reset for older browsers */
+	article, aside, details, figcaption, figure,
+	footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+	body {
+		line-height: 1;
+	}
+	blockquote, q {
+		quotes: none;
+	}
+	blockquote:before, blockquote:after,
+	q:before, q:after {
+		content: '';
+		content: none;
+	}
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+	*{
+		box-sizing: border-box;
+	}
+	body{
+		font-size: 16px;
+	}
+	main{
+		display: flex;
+		flex-direction: column;
+		background-color: #f0f6ff;
+		width: 60vw;
+		max-width: 800px;
+		margin: 50px auto 0 auto;
+		padding: 5px 5px 15px 5px;
+	}
+
+	h1{
+		font-size: 3.5em;
+		font-weight: bold;
+	}
+	h2{
+		margin: 15px 0;
+		font-size: 1.6em;
+		font-weight: bold;
+	}
+
+	.columns-wrapper{
+		display: flex;
+
+	}
+	.column{
+		flex: 1;
+	}
+	.tile{
+		width: 90%;
+		margin: auto;
+		padding: 10px;
+	}
+	.black{
+		background-color: #000;
+		color: #fff;
+	}
+	.yellow{
+		background-color: #ffa500;
+		color: #000;
+	}
+	#who-am-i{
+		font-size: 2.8em;
+	}
+	#hobbys{
+		font-size: 1.5em;
+		line-height: 1.2;
+	}
+	#address{
+		font-size: 1.5em;
+	}
 	</style>
 </head>
 <body>
+	<main>
+		<h1>Jan Kowalski</h1>
+		<div class="columns-wrapper">
+			<div class="column">
+				<h2>Co robię?</h2>
+				<div id="who-am-i" class="tile black">Jestem studentem informatyki WPPT</div>
+			</div>
+			<div class="column">
+				<h2>Co lubię?</h2>
+				<div id="hobbys" class="tile yellow">
+					<ul>
+						<li>pływać</li>
+						<li>czytać</li>
+						<li>programować</li>
+						<li>fotografować</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div>
+			<h2>Adres:</h2>
+			<div id="address" class="tile black">
+				Droga mleczna; układ słoneczny (taka mała gwiazdka klasy G2V w wewnętrznej części Ramienia Oriona); trzecia planeta od Słońca; kontynent Europa
+			</div>
+		</div>
+	</main>
 </body>
 </html>
