@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Align divs</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        body {
+            font-size: 25px;
+        }
+
+        .equal {
+            color: #E9E8E7;
+            padding: 5%;
+        }
+
+        .equal:nth-of-type(even) {
+            background: #000053;
+        }
+
+        .equal:nth-of-type(odd) {
+            background: #6666b9;
+        }
+    </style>
+</head>
+<body>
+<div class="equal">
+    <h1>HELLO</h1>
+</div>
+<div class="equal">
+    <p>It's me. I've been wondering if...</p>
+</div>
+<div class="equal">
+    <p>Hello from the other side.</p>
+    <p>Hello from the other side.</p>
+    <p>Hello from the other side.</p>
+    <p>Hello from the other side.</p>
+    <p>Hello from the other side.</p>
+    <p>Hello from the other side.</p>
+</div>
+<div class="equal">
+    <button id="enlarge-font">Font size +</button>
+    <button id="diminish-font">Font size -</button>
+</div>
+<div class="equal"></div>
+<div class="equal"></div>
+<div class="equal"></div>
+<div class="equal"></div>
+<script>
+    function addFontSizeListeners() {
+        var enlargeButton = document.getElementById("enlarge-font");
+        var diminishButton = document.getElementById("diminish-font");
+
+        enlargeButton.addEventListener("click", function () {
+            var body = document.getElementsByTagName("body")[0];
+            var fontSize = parseFloat(window.getComputedStyle(body, null).getPropertyValue('font-size'));
+            document.body.style.fontSize = fontSize * 1.2 + "px";
+        });
+
+        diminishButton.addEventListener("click", function () {
+            var body = document.getElementsByTagName("body")[0];
+            var fontSize = parseFloat(window.getComputedStyle(body, null).getPropertyValue('font-size'));
+            document.body.style.fontSize = fontSize * 0.8 + "px";
+        });
+    }
+
+    function alignDivs() {
+        var divs = document.getElementsByClassName("equal");
+
+        for (var i = 0; i < divs.length; i++) {
+            divs[i].style.height = "auto";
+        }
+
+        var height = 0;
+        for (i = 0; i < divs.length; i++) {
+            height = Math.max(height, divs[i].clientHeight);
+        }
+
+        for (i = 0; i < divs.length; i++) {
+            divs[i].style.height = height + "px";
+        }
+    }
+
+    window.onload = function () {
+        addFontSizeListeners();
+        alignDivs();
+        window.onresize = alignDivs;
+    }
+</script>
+</body>
+</html>

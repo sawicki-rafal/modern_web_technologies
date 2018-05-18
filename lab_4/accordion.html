@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <title>Hide-show:4b</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        #container {
+            width: 100%;
+            max-width: 720px;
+            margin: 1em auto;
+            padding: 0.5em;
+            background: #f9f9ff;
+        }
+
+        body style {
+            display: block;
+            white-space: pre;
+            border: solid 1px #555;
+            color: white;
+            padding: 1em;
+        }
+
+        .centered {
+            text-align: center;
+        }
+
+        h1, h2 {
+            color: #000053;
+        }
+
+        .acc-card {
+            margin-bottom: 0.5em;
+            background: #cccce8;
+            padding: 0.5em;
+        }
+
+        .acc-card header {
+            margin-top: 0;
+            margin-bottom: 0;
+            font-size: 1.5em;
+        }
+
+        .acc-card .infopanel {
+            display: none;
+            background: #fff;
+            padding: 0.5em;
+            margin-top: 0.5em;
+            transition: opacity 1s ease-out;
+        }
+
+        .label {
+            border-radius: 0.2em;
+            padding: 0 0.25em;
+            color: #fff;
+            background: #6666b9;
+        }
+
+        .secondary {
+            background: #ffff66;
+            color: #000;
+        }
+    </style>
+    <script src='js/accordion.js'></script>
+</head>
+
+<body>
+<div id="container">
+
+    <header>
+        <h1>Hide - Show: część IVb</h1>
+    </header>
+
+    <section>
+        <h2>Aktualności</h2>
+
+        <div class="accordion" id="ACC-01">
+
+            <div class="acc-card" data-prefix="id-1">
+                <header id="id-1-a">
+                    <span class="label">12-02-2018</span>
+                    To jest info 1
+                </header>
+                <div id="id-1-b" class="infopanel">
+                    To jest bardzo ważna informacja nr 1
+                </div>
+            </div>
+
+            <div class="acc-card" data-prefix="id-2">
+                <header id="id-2-a">
+                    <span class="label">24-02-2018</span>
+                    To jest info 2
+                </header>
+                <div id="id-2-b" class="infopanel">
+                    To jest bardzo ważna informacja nr 2: jutro będą godziny Rektorskie, pojutrze - godziny Dziekańskie,
+                    a po-pojutrze zmywamy się i jedziemy w góry na tygodniową wycieczkę.
+                </div>
+            </div>
+
+            <div class="acc-card" data-prefix="id-3">
+                <header id="id-3-a">
+                    <span class="label">01-03-2018</span>
+                    To jest info 3
+                </header>
+                <div id="id-3-b" class="infopanel">
+                    To jest bardzo ważna informacja nr 3
+                </div>
+            </div>
+
+            <div class="acc-card" data-prefix="id-4">
+                <header id="id-4-a">
+                    <span class="label secondary">08-03-2018</span>
+                    Dzień kobiet
+                </header>
+                <div id="id-4-b" class="infopanel">
+                    To jest bardzo ważna informacja nr 4
+                </div>
+            </div>
+        </div><!-- accordion -->
+    </section>
+
+</div>
+</body>
+</html>
