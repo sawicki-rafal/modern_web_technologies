@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Changing chars</title>
+</head>
+<body>
+<form>
+    <div id="message"></div>
+    <textarea id="textarea" cols="30" rows="10"></textarea>
+    <button id="purify-button" type="button">Change</button>
+</form>
+<script>
+    function initLetterCounter() {
+        var purifyButton = document.getElementById("purify-button");
+
+        function purifyInput() {
+            var textarea = document.getElementById("textarea");
+            var messageBox = document.getElementById("message");
+            messageBox.innerText = textarea.value
+                .replace("&","&amp;")
+                .replace("<","&lt;")
+                .replace(">","&gt;")
+                .replace("\"","&quot;")
+                .replace("'","&#x27;")
+                .replace("/","&#x2F;");
+        }
+
+        purifyButton.addEventListener("click", purifyInput);
+    }
+
+    window.onload = function () {
+        initLetterCounter();
+    };
+</script>
+
+</body>
+</html>

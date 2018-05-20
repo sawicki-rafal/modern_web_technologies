@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Textarea</title>
+</head>
+<body>
+<form>
+    <div id="message"></div>
+    <textarea id="textarea" cols="30" rows="10"></textarea>
+    <button id="count-letters-button" type="button">Count</button>
+    <button id="clear-button" type="button">Clear</button>
+</form>
+<script>
+    function initLetterCounter() {
+
+        var countButton = document.getElementById("count-letters-button");
+        var clearButton = document.getElementById("clear-button");
+
+        function countLetters() {
+            var messageBox = document.getElementById("message");
+            var textarea = document.getElementById("textarea");
+            messageBox.innerText = "Number of letters in input(including white characters): " + textarea.value.length;
+        }
+
+        function clearInput() {
+            var textarea = document.getElementById("textarea");
+            var messageBox = document.getElementById("message");
+            messageBox.innerText = "";
+            textarea.value = "";
+        }
+
+        countButton.addEventListener("click", countLetters);
+
+        clearButton.addEventListener("click", clearInput);
+    }
+
+    window.onload = function () {
+        initLetterCounter();
+    };
+</script>
+
+</body>
+</html>
