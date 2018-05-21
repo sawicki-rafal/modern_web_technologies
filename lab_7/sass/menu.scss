@@ -1,0 +1,20 @@
+$topmenu-bg : #33b5e5;
+#topmenu{
+  background: lighten($topmenu-bg, 20%);
+  color: #222;
+  ul {
+    list-style: none;
+    li {
+      display: block;
+      &.active {
+        color: #12d232;
+      }
+      a {
+        color: #10ea30;
+        &:hover{
+          color: #ce1211;
+        }
+      }
+    }
+  }
+}

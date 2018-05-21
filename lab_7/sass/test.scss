@@ -1,0 +1,16 @@
+$topmenu-bg : #33b5e5;
+
+%light-element{
+  background: lighten($topmenu-bg, 20%);
+  color : #333;
+  padding: .5em 1em;
+}
+.jasny-element{
+  @extend %light-element;
+  border : 1px solid red;
+}
+table.jasny-element{
+  td {
+    padding: 0.25em;
+  }
+}

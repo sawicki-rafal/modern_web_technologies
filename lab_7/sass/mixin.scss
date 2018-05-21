@@ -1,0 +1,21 @@
+@mixin setBgColPad($bg, $col, $pad){
+  background: $bg;
+  color     : $col;
+  padding   : (0.5)*$pad $pad;
+}
+
+.myDarkElement{
+  @include setBgColPad(#222, #eee, 1em);
+  font-size: 2em;
+  p {
+    padding: 1em;
+  }
+}
+
+.myLightElement{
+  @include setBgColPad(#eee, #222, 1.5em);
+  border: solid 2px red;
+  header {
+    color : #000;
+  }
+}
