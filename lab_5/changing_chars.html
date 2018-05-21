@@ -6,18 +6,18 @@
 </head>
 <body>
 <form>
-    <div id="message"></div>
     <textarea id="textarea" cols="30" rows="10"></textarea>
     <button id="purify-button" type="button">Change</button>
+    <button id="copy-button" type="button">Copy</button>
 </form>
 <script>
     function initLetterCounter() {
         var purifyButton = document.getElementById("purify-button");
+        var copyButton = document.getElementById("copy-button");
 
         function purifyInput() {
             var textarea = document.getElementById("textarea");
-            var messageBox = document.getElementById("message");
-            messageBox.innerText = textarea.value
+            textarea.value = textarea.value
                 .replace("&","&amp;")
                 .replace("<","&lt;")
                 .replace(">","&gt;")
@@ -26,7 +26,14 @@
                 .replace("/","&#x2F;");
         }
 
+        function copyInput() {
+            var textarea = document.getElementById("textarea");
+            textarea.select();
+            document.execCommand("copy");
+        }
+
         purifyButton.addEventListener("click", purifyInput);
+        copyButton.addEventListener("click", copyInput);
     }
 
     window.onload = function () {
